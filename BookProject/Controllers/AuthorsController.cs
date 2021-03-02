@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookProject.Controllers
 {
-    [Route("/api/{controller}")]
+    [Route("/api/[controller]")]
     [ApiController]
     public class AuthorsController : Controller
     {
@@ -51,13 +51,13 @@ namespace BookProject.Controllers
         [ProducesResponseType(404)]
         [ProducesResponseType(400)]
         [ProducesResponseType(200, Type=typeof(AuthorDto))]
-        public ActionResult GetAuthorById(int id)
+        public ActionResult GetAuthorById(int authorId)
         {
-            if (!_authorRepository.AuthorExists(id))
+            if (!_authorRepository.AuthorExists(authorId))
             {
                 return NotFound();
             }
-            var author = _authorRepository.GetAuthor(id);
+            var author = _authorRepository.GetAuthor(authorId);
 
             if (!ModelState.IsValid)
             {
@@ -70,15 +70,15 @@ namespace BookProject.Controllers
                 LastName = author.LastName
             };
 
-            return Ok(author);
+            return Ok(authorDto);
         }
         [HttpGet("{authorId}/books")]
         [ProducesResponseType(200, Type=typeof(IEnumerable<BookDto>))]
         [ProducesResponseType(404)]
         [ProducesResponseType(400)]
-        public ActionResult GatAllBooksByAnAuthor(int authorId)
+        public ActionResult GetAllBooksByAnAuthor(int authorId)
         {
-            if (_authorRepository.AuthorExists(authorId)){
+            if (!_authorRepository.AuthorExists(authorId)){
                 return NotFound();
             }
             var booksByAuthor = _authorRepository.GetBooksByAnAuthor(authorId);
@@ -101,6 +101,10 @@ namespace BookProject.Controllers
             return Ok(booksDto);
 
         }
-        //TODO CREATE GET AUTHORS OF A BOOK
+
+            //TODO CREATE GET AUTHORS OF A BOOK
+
+
+
     }
 }
