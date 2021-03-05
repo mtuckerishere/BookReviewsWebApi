@@ -19,6 +19,8 @@ namespace BookProject.Models
         [MaxLength(200,ErrorMessage = "The title cannot be more than 200 characters")]
         public string Title { get; set; }
         public DateTime? DatePublished { get; set; }
+        public string Description{get;set;}
+        public string ImageUrl{get;set;}
         public virtual ICollection<Review> Reviews { get; set; }
         public virtual ICollection<BookAuthor> BookAuthors { get; set; }
         public virtual ICollection<BookCategory> BookCategories { get; set; }

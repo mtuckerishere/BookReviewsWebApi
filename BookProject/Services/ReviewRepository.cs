@@ -11,7 +11,7 @@ namespace BookProject.Services
         private readonly BookDbContext _bookDbContext;
         public ReviewRepository(BookDbContext bookDbContext)
         {
-
+            _bookDbContext = bookDbContext;
         }
         public Book GetBookOfAReview(int reviewId)
         {

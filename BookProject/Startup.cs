@@ -15,6 +15,7 @@ namespace BookProject
 {
     public class Startup
     {
+      
         public static IConfiguration Configuration { get; set; }
 
         public Startup(IConfiguration configuration)
@@ -25,6 +26,7 @@ namespace BookProject
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddMvc();
 
             var connectionString = Configuration["connectionStrings:bookDbConnectionString"];
@@ -34,6 +36,7 @@ namespace BookProject
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IReviewerRepository, ReviewerRepository>();
             services.AddScoped<IAuthorRepository, AuthorRepository>();
+            services.AddScoped<IBookRepository, BookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +50,7 @@ namespace BookProject
 
             app.UseRouting();
 
+           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

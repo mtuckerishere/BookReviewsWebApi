@@ -10,10 +10,10 @@ namespace BookProject.Controllers
 {
     [ApiController]
     [Route("/api/[controller]")]
-    public class BookController : Controller
+    public class BooksController : Controller
     {
         private readonly IBookRepository _iBookRepository;
-        public BookController(IBookRepository iBookRepository)
+        public BooksController(IBookRepository iBookRepository)
         {
             _iBookRepository = iBookRepository;
         }
@@ -39,7 +39,9 @@ namespace BookProject.Controllers
                     Id = book.Id,
                     Title = book.Title,
                     Isbn = book.Isbn,
-                    DatePublished = book.DatePublished
+                    DatePublished = book.DatePublished,
+                    Description = book.Description,
+                    ImageUrl = book.ImageUrl
 
                 });
             }
@@ -69,7 +71,9 @@ namespace BookProject.Controllers
                 Id = book.Id,
                 Title = book.Title,
                 Isbn = book.Isbn,
-                DatePublished = book.DatePublished
+                DatePublished = book.DatePublished,
+                Description = book.Description,
+                ImageUrl = book.ImageUrl
             };
 
             return Ok(bookDto);

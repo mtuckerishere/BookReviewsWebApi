@@ -11,5 +11,8 @@ namespace BookProject.Dtos
         public string Isbn { get; set; }
         public string Title { get; set; }
         public DateTime? DatePublished { get; set; }
+        public string Description{get;set;}
+        public string ImageUrl{get;set; }
+
     }
 }
