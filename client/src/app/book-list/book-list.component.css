@@ -1,0 +1,16 @@
+.tp-card {
+  max-width: 400px;
+}
+.header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+mat-card{
+  border-width: 2px;
+  border-style:solid;
+  color:black;
+  margin:4px;
+}
+button{
+  margin: 2px;
+}
