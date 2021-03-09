@@ -12,6 +12,7 @@ namespace BookProject.Services
         Author GetAuthor(int authorId);
         ICollection<Author> GetAuthorsOfABook(int bookId);
         ICollection<Book> GetBooksByAnAuthor(int authorId);
+    
         bool AuthorExists(int authorId);
     }
 }

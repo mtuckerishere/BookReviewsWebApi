@@ -11,7 +11,7 @@ import {Book} from '../Interface/book';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  books: Book[] = []
+  books: Book[] = [];
 
 
   constructor(private apiService:ApiService) { }
