@@ -37,6 +37,7 @@ namespace BookProject
             services.AddScoped<IReviewerRepository, ReviewerRepository>();
             services.AddScoped<IAuthorRepository, AuthorRepository>();
             services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IReviewRepository, ReviewRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

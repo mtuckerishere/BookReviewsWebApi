@@ -124,8 +124,6 @@ namespace BookProject.Controllers
                         DatePublished = book.DatePublished
 
                     });
-                   
-                
                 }
             return Ok(booksDto);
             }

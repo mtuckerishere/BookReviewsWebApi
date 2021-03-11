@@ -8,13 +8,21 @@ import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthorListComponent } from './author-list/author-list.component';
+import { ReviewListComponent } from './review-list/review-list.component';
+import { CategoryListComponent } from './category-list/category-list.component';
+import { CountryListComponent } from './country-list/country-list.component';
+import { ReviewerListComponent } from './reviewer-list/reviewer-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
-    AuthorListComponent
+    AuthorListComponent,
+    ReviewListComponent,
+    CategoryListComponent,
+    CountryListComponent,
+    ReviewerListComponent
   ],
   imports: [
     BrowserModule,

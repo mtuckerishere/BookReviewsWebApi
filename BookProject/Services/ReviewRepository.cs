@@ -25,7 +25,7 @@ namespace BookProject.Services
 
         public ICollection<Review> GetReviews()
         {
-            return _bookDbContext.Reviews.OrderBy(r => r.Reviewer).ToList();
+            return _bookDbContext.Reviews.OrderBy(r => r.ReviewText).ToList();
         }
 
         public ICollection<Review> GetReviewsOfABook(int bookId)

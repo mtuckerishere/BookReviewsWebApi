@@ -7,25 +7,27 @@
     </li>
     <li class='nav-item'>
       <!-- Add routing information -->
-      <a class='nav-link'>Authors</a>
+      <a  class='nav-link' routerLink='authors'>Authors</a>
     </li>
     <li class='nav-item'>
       <!-- Add routing information -->
-      <a class='nav-link'>Books</a>
+      <a class='nav-link' routerLink='books'>Books</a>
     </li>
     <li class='nav-item'>
       <!-- Add routing information -->
-      <a class='nav-link'>Countries</a>
+      <a class='nav-link' routerLink='countries'>Countries</a>
     </li>
     <li class='nav-item'>
       <!-- Add routing information -->
-      <a class='nav-link'>Categories</a>
+      <a class='nav-link' routerLink='categories'>Categories</a>
     </li>
     <li class="nav-item">
-      <a class='nav-link'>Reviews</a>
+      <a class='nav-link' routerLink='reviews'>Reviews</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="reviewers">Reviewers</a>
     </li>
   </ul>
 </nav>
+<router-outlet></router-outlet>
 
-<app-book-list></app-book-list>
-<app-author-list></app-author-list>
