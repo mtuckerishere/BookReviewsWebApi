@@ -12,7 +12,12 @@ namespace BookProject.Services
         Category GetCategory(int categotyId);
         ICollection<Category> GetAllCategoriesOfABook(int bookId);
         ICollection<Book> GetBooksForCategory(int categoryId);
-        public bool CategoryExists(int categotyId);
+        bool CategoryExists(int categotyId);
+        bool Save();
+        bool CreateCategory(Category category);
+        bool DeleteCategory(Category category);
+        bool UpdateCategory(Category categeory);
+        
 
     }
 }

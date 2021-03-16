@@ -40,5 +40,21 @@ namespace BookProject.Services
         {
             return _bookContext.Categories.Where(c => c.Id == id).FirstOrDefault();
         }
+        public bool Save(){
+            int isSaved = _bookContext.SaveChanges();
+            return isSaved >=0?true:false;
+        }
+        public bool CreateCategory(Category category){
+            _bookContext.Add(category);
+            return Save();
+        }
+        public bool DeleteCategory(Category category){
+            _bookContext.Remove(category);
+            return Save();
+        }
+        public bool UpdateCategory(Category category){
+            _bookContext.Update(category);
+            return Save();
+        }
     }
 }
