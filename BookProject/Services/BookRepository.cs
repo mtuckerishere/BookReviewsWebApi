@@ -55,5 +55,32 @@ namespace BookProject.Services
 
             return isDuplicateBook==null ?false:true;
         }
+        public bool CreateBook(Book book, List<int> authorId, List<int> categoryId){
+            var authors = _bookDbContext.Authors.Where(a=>authorId.Contains(a.Id)).ToList();
+            var categories = _bookDbContext.Categories.Where(c=>categoryId.Contains(c.Id)).ToList();
+
+            //loops through the authors and adds them to books
+            foreach(var author in authors){
+                var bookAuthor = new BookAuthor{
+                    Author =author,
+                    Book = book
+                };
+                _bookDbContext.Add(bookAuthor);
+            }
+            //loops through categories and adds them to the books
+            foreach(var category in categories){
+                var bookCategory = new BookCategory{
+                    Category = category,
+                    Book = book
+                };
+                _bookDbContext.Add(bookCategory);
+            }
+            var newBook =  _bookDbContext.Add(book);
+            return Save();
+        }
+        public bool Save(){
+            var isSaved = _bookDbContext.SaveChanges();
+            return isSaved >=0 ?true: false;
+        }
     }
 }

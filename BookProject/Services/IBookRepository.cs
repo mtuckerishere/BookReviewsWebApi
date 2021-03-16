@@ -15,5 +15,7 @@ namespace BookProject.Services
         bool BookExists(string bookIsbn);
         bool IsDuplicateISBN(int bookId, string isbn);
         decimal GetBookRating(int bookId);
+        bool CreateBook(Book book, List<int> authorId, List<int> categoryId);
+        bool Save();
     }
 }

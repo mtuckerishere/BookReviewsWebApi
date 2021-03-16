@@ -12,6 +12,7 @@ import { ReviewListComponent } from './review-list/review-list.component';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { CountryListComponent } from './country-list/country-list.component';
 import { ReviewerListComponent } from './reviewer-list/reviewer-list.component';
+import { BookDetailsComponent } from './book-list/book-details/book-details.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ReviewerListComponent } from './reviewer-list/reviewer-list.component';
     ReviewListComponent,
     CategoryListComponent,
     CountryListComponent,
-    ReviewerListComponent
+    ReviewerListComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,

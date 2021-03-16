@@ -18,6 +18,9 @@ export class ApiService {
       tap(data=>
       console.log('All ' + JSON.stringify(data))));
   }
+  public getBookById(id):Observable<Book>{
+    return this.http.get<Book>(`${this.API_URL}/books/` +id)
+  }
 }
 
 
